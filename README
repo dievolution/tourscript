@@ -37,8 +37,15 @@ scripts/jqueryui jqueryui, only for highlight effect
 	- "highlight" is a highlight option for an element in the chosen element. The element will pulsate so the user can see what the description is currently talking about.
 
 
+	Start Tour:
+	start the tour by activating
+	startTour("path/to/json/file/or/input");
 
-
+	Navigation Elements:
+	Use the following css classes for navigation bar:
+	<a href="#" class='lastTourItem'>last item</a>
+	<a href="#" class='nextTourItem'>next item</a>
+	<a href="#" class="closeTour">end tour</a>
 
 License
 
