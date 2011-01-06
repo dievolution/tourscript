@@ -1,0 +1,53 @@
+[
+	{
+		"element"		:	"#demo",
+		"label"			:	"Welcome to the demo tour! I am your tourguide for today. Follow me please by clicking on 'continue the tour' now. "
+	},
+	{
+		"element"		:	"#demo",
+		"label"			:	"This demo will show you all the features of Tourscript V1.<br>You are reading the first feature at the moment. Descriptions can be attached to any highlighted area. You can put <strong>html codes</strong> in the description as well! Let's move on."
+	},
+	{
+		"element"		:	"#tourguide",
+		"label"			:	"I'm here now! You can attach the tour to any html element on your site by using any jquery selector. Nice, isn't it?"
+	},
+	{
+		"element"		:	"#tourguide",
+		"label"			:	"While we are here, this is the tour navigation. THis navigation bar is not rendered automatically, but you will see in a minute how I did it. You can alwys jump one tour item back or move to the next tour item by clicking the corresponding link. The end tour links ends the tour immediately. Don't click it now ;)."
+	},
+	{
+		"element"		:	"#demo",
+		"label"			:	"By default, a user taking the tour can't click anywhere on the side, preventing users from accidentaly clicking on something they should not have clicked on. Try it by clicking on the pomodorohelper.com link. You should not be able to click it, even though the area looks like you could."
+	},
+	{
+		"element"		:	"#demo",
+		"label"			:	"Sometimes, you want to let your users click on something, like an ajax or javascript link. This is the interactive option. Let's try it now."
+	},
+	{
+		"element"		:	"#install",
+		"label"			:	"This tour item has an interactive option set, disabling the normal 'continue the tour' link. Instead, it listens to a click on a link or a submit button. Once a link is clicked, it waits one second (so ajax in the background can load) before rendering the next tour item. Click on 'click here to show code' to continue your tour.",
+		"options"		:	"interactive"
+	},
+	{
+		"element"		:	"#install",
+		"label"			:	"Nice, isn't it?"
+	},
+	{
+		"element"		:	"#demo",
+		"label"			:	"There is another interesting option. With Tourscript, you are able to let elements in your currently highlighted area blink. Want to see it?"
+	},
+	{
+		"element"		:	"#demo",
+		"label"			:	"The Demo Headline should now blink. Do you see that only the headline blinks, although there are multiple h2 elements on this site? That's because blinking only works in the highlighted area. And of course, highlighting an element works exactly the same way like highlighting an area, so every jquery selector can be used.",
+		"highlight"	: "h2"
+	},
+	{
+		"element"		:	"#demo",
+		"label"			:	"Two other minor features of Tourscript:<ul><li>It automatically adjusts when browser window is resized</li><li>If a highlighted area starts on the lower half of the browser screen, the tooltip description will be rendered above the element</li></ul>"
+	},
+	{
+		"element"		:	"#demo",
+		"label"			:	"I hope you like the Tourscript. If you have trouble using it (or if you have ideas how to improve it), just contact me or use the github page.<br>Your tourguide<br><br>Have a nice day!",
+		"options"		: "lastItem"
+	}
+]

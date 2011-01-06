@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<title>Tourscript: Demo || Download</title>
+	<link href="css/site.css" media="all" rel="stylesheet" type="text/css" />
+
+	<script src="http://code.jquery.com/jquery-1.4.4.js"></script>
+	<script src="scripts/jqueryui.js"></script>
+	<link href="css/tour.css" media="all" rel="stylesheet" type="text/css" />
+	<script src="scripts/tour.js"></script>
+
+</head>
+
+<body>
+<h1>Tourscript</h1>
+<h2>Jquery takes a tour</h2>
+
+
+<div id="main">
+
+<p class="description">
+	a lightweight jquery script for building tours around sites
+	<br>
+	by Thomas Diehl, <a href="http://www.dievolution.com">www.dievolution.com</a>
+</p>
+
+
+
+	<p id="story">
+		Imagine you developed a nice web application in your favorite language. Everything works fine, it is easy to use,
+		but it could use an even better documentation. Something like an interactive tour...
+	</p>
+
+	<p>Let's try Tourscript! It is a little javascript app based on jquery providing you a very easy way to show your users your site,
+		your app or whatever you can think of. It uses json formatting on the backend, so you can feed it directly from the page, via a seperate file or via a database.
+	</p>
+
+	<div id="demo">
+		<h2>Demo</h2>
+		<p>Click the demo button on the right or the start demo tour button on the top right to start the demo tour.<br/>I am using this script in my application <a href="http://www.pomodorohelper.com">www.pomodorohelper.com</a>, go there if you want to see a working example.</p>
+	</div>
+
+	<div id="install">
+		<h2>Install</h2>
+		Follow this steps to install Tourscript on your site:
+		<ol>
+			<li>Download Tourscript from Github by clicking the big download button</li>
+			<li>Add jquery, jqueryUI (for the blinking stuff) and the tour.js to your websites head: <a href="#" class="ajaxLink1">click here to show code</a>
+				<div id="ajaxPlace1" style="display:none">
+					<script src="https://gist.github.com/767994.js?file=gistfile1.html"></script>
+				</div>
+			</li>
+			<li>Load the tour: <a href="#" class="ajaxLink2">click here to show code</a>
+				<div id="ajaxPlace2" style="display:none">
+					<script src="https://gist.github.com/767960.js?file=tourscript_install1.html"></script>
+				</div>
+			</li>
+	</div>
+
+	<script type="text/javascript" charset="utf-8">
+		$(document).ready(function(){
+			$(".ajaxLink1").click(function() {$('#ajaxPlace1').toggle();});
+			$(".ajaxLink2").click(function() {$('#ajaxPlace2').toggle();});
+		});
+	</script>
+
+	<div id="use">
+		<h2>How to build a tour</h2>
+		<p>Tours are stored in the json format. If you want to create a static tour, the easiest way is to create a .json file. Inside, use an array of hashs to display the tour. Sounds complicated? Here is an example:</p>
+		<script src="https://gist.github.com/768004.js?file=gistfile1.js"></script>
+		<p>Each hash is one item in the tour.</p>
+		<ul>
+			<li>"element" is the box who should be higlighted. This can be any valid jquery selector (must be unique, or the first one will be chosen)</li>
+			<li>"label" is the description displayed underneath or above the highlighted element. It can contain html elements.</li>
+			<li>"options": Just write an option as text in this part to activate. The following options are currently available:</li>
+				<ul>
+					<li>interactive : when using this option, the user will be able to click something in the highlighted element. Any form submit or link click will continue to the next part of the tour</li>
+					<li>lastItem : this option should be used for the last element of the tour. This will replace the 'continue tour' link with a 'end tour' link, closing the tour.</li>
+				</ul>
+			<li>"highlight" is a highlight option for an element in the chosen element. The element will pulsate so the user can see what the description is currently talking about.</li>
+		</ul>
+		<p>"element" and "label" should always be in a touritem, "options" and "highlight" are optional.</p>
+	</div>
+
+<p>If you have problems using the script, use github or the "normal" ways to contact me.</p>
+<p>I'm also always interested in new ideas and bugfixes for the script.</p>
+</div>
+
+<div id="side">
+	<a href="#" class="startTour">Demo</a>
+	<a href="https://github.com/dievolution/tourscript">Download from Github</a>
+
+
+	<div id="donate">
+		<p>If you like it, support my energy drink consumption ;)</p>
+		<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+		<input type="hidden" name="cmd" value="_s-xclick">
+		<input type="hidden" name="hosted_button_id" value="PJCMP755U4HWQ">
+		<input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+		<img alt="" border="0" src="https://www.paypal.com/de_DE/i/scr/pixel.gif" width="1" height="1">
+		</form>
+	</div>
+
+	<h3>Feature overview</h3>
+	<ul>
+		<li>Lightweight Jquery based Tour script</li>
+		<li>works on all browsers (highlighting sub elements looks a bit strange in IE)</li>
+		<li>show any part of the current page with jquery selectors</li>
+		<li>disable or force user input</li>
+		<li>let subelements blink when talking about them</li>
+		<li>JSON tour structure for easy input</li>
+		<li>MIT License</li>
+	</ul>
+</div>
+
+
+<!-- this is the tour navigation. It is not needed, but it is nice to have-->
+<div id="tourguide">
+	<div id="tourguide_active" style="display:none">
+		<a href="#" class='lastTourItem'>last item</a> -
+		<a href="#" class='nextTourItem'>next item</a> -
+		<a href="#" class="closeTour">end tour</a>
+	</div>
+	<div id="tourguide_inactive">
+		<a href='#' class='startTour'>start demo tour</a>
+	</div>
+</div>
+<!-- end of navigation -->
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(".startTour").click(function() {
+			$('#tourguide_active').show();
+			$("#tourguide_inactive").hide();
+			startTour("tour.json");
+		});
+	});
+</script>
+
+
+<div id="footer">
+	<p>This script is licensed under the MIT Licence</p>
+	<p>Copyright (c) 2011 Thomas Diehl, <a href="http://www.dievolution.com">DIEVOLUTION web development</a></p>
+
+	<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+	of this software and associated documentation files (the "Software"), to deal
+	in the Software without restriction, including without limitation the rights
+	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+	copies of the Software, and to permit persons to whom the Software is
+	furnished to do so, subject to the following conditions:</p>
+
+	<p>The above copyright notice and this permission notice shall be included in
+	all copies or substantial portions of the Software.</p>
+
+	<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+	THE SOFTWARE.</p>
+</div>
+</body>
+</html>

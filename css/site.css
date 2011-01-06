@@ -1,0 +1,48 @@
+body {
+	font-family: Verdana, Arial, sans-serif;
+	font-size: 80%;
+	margin: 10px;
+	padding: 0;
+	line-height: 150%;
+}
+
+
+#main {
+	width: 65%;
+	float:left;
+}
+
+#side {
+	width:30%;
+	float:left;
+	margin-left:5%;
+}
+
+#main a {
+	color: #206380;
+}
+#main a:hover {
+	background-color: #206380;
+	color:#fff;
+}
+
+#side a {
+	background-color: #206380;
+	color:#fff;
+	display:block;
+	margin: 10px;
+	padding:10px;
+	font-size: 150%;
+	text-align:center;
+}
+
+#footer {
+	clear:both;
+	margin: 10px 0 0 0;
+	border-top: 1px solid #888;
+	font-size:90%;
+}
+
+#donate {
+	text-align:center;
+}

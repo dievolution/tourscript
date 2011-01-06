@@ -1,0 +1,54 @@
+.darkbox {
+	position: absolute;
+	background-color: #000;
+	opacity: 0.7;
+	z-index:5;
+	filter: alpha(opacity=50);
+}
+
+#tourguide {
+	position:absolute;
+	top: 0;
+	right: 20px;
+	z-index: 100;
+	padding: 5px;
+	text-align:right;
+	background-color: #206380;
+}
+
+#tourguide a {
+	color :#fff;
+}
+
+.tourLabel {
+	position: absolute;
+	background-color:#111;
+	color:#fff;
+	z-index: 100;
+	padding: 3px;
+}
+
+.tourLabel a {
+	color: #fff;
+}
+
+.tourLabel a:hover {
+	background-color: #206380;
+}
+
+.tourCurrentItem, .tourLabel {
+	-webkit-box-shadow:2px 2px 2px #000;
+	-moz-box-shadow:2px 2px 2px #000;
+}
+
+.tourLabel .nextTourItem {
+	display:block;
+}
+
+#tourCurrentBoxDisabled {
+	opacity: 0;
+	filter: alpha(opacity=0);
+	z-index: 99;
+	background-color:#fff;
+
+}
