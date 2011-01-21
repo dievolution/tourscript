@@ -54,6 +54,8 @@ function startTour(jsonfile) {
 		var k = items.length;
 		var currentItem = 0;
 		var started = true;
+		var didScroll = false;
+		var everyItem = $("*");
 		dimensions(items[0]);
 		$(".nextTourItem").live('click',function() {
 			nextItem();
@@ -70,36 +72,41 @@ function startTour(jsonfile) {
 		});
 
 		$(".lastTourItem").live('click',function() {
-			$("*").removeClass("tourCurrentItem");
+			everyItem.removeClass("tourCurrentItem");
 			if (!items[currentItem-1])
 				currentItem = k;
 			dimensions(items[currentItem-=1]);
 		});
 
 		$(window).resize(function() {
-		 $("*").removeClass("tourCurrentItem");
-			if (started)
-				dimensions(items[currentItem]);
+			didScroll = true;
 		});
 
 		$(window).scroll(function() {
-		 $("*").removeClass("tourCurrentItem");
-			if (started)
-				dimensions(items[currentItem]);
+			didScroll = true;
 		});
+
+		setInterval(function() {
+			if (didScroll) {
+				didScroll = false;
+				$("*").removeClass("tourCurrentItem");
+					if (started)
+						dimensions(items[currentItem]);
+			}
+		}, 250);
 
 		$(".closeTour").live('click', function() {
 			$(".tourLabel").remove();
 			$(".darkbox").remove();
 			$("#tourguide_active").hide();
 			$("#tourguide_inactive").show();
-			$("*").removeClass("tourCurrentItem");
-			$("*").removeClass("tourInteractiveClick");
+			everyItem.removeClass("tourCurrentItem");
+			everyItem.removeClass("tourInteractiveClick");
 			started = false;
 		});
 
 		function nextItem() {
-			$("*").removeClass("tourCurrentItem");
+			everyItem.removeClass("tourCurrentItem");
 			if (!items[currentItem+1])
 				currentItem = -1;
 			dimensions(items[currentItem+=1]);
